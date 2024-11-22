@@ -27,4 +27,150 @@ To extend this definition to all cycles, the classical approach consists in usin
 \end{enumerate}
 
 \subsubsection{Exercise.} Show that these conditions ensure that an \enquote{external} product $\alpha \times \beta$ (on $X \times Y$) is $\sim 0$ as soon as $\alpha \sim 0$ or $\beta \sim 0$.
+
+\subsection{} These conditions ensure that the intersection product which is partially defined on $\mathcal{Z}^*(X)_F$ factors through the quotient by $\sim$, and yields a well-defined composition law on
+$$\mathcal{Z}^*_{\sim}(X)_F = \mathcal{Z}^*(X)_F/\sim$$
+endowing it with the structure of a \emph{commutative graded $F$-algebra} (and not graded-commutative)\footnote{other notations often used are $A^*_{\sim}(X)_F$, $C^*_{\sim}(X)_F$, $A^*_{\sim}(X, F)$, ...}.
+
+\emph{N.B.} One shall be careful not to confuse $\mathcal{Z}^*_{\sim}(X) \otimes_{\Z} F$ with its quotient $\mathcal{Z}^*_{\sim}(X)_F$.
+
+The third condition defining adequate relations implies that constructing the algebra $\mathcal{Z}^*_{\sim}(X)_F$ is \emph{contravariant} in $X$ (let $\gamma$ be the transpose of the graph $\Gamma_f$ of the given morphism $f$, obtained by exchanging in $\Gamma_f$ the factors $X \times Y \to Y \times X$).
+We also obtain a homomorphism of $F$-modules \emph{in the other way} $f_* : \mathcal{Z}^*_{\sim}(X)_F \to \mathcal{Z}^*_{\sim}(Y)_F$ shifting the grading by $(- \text{the generic relative dimension of }f)$, if the latter is constant on the components of $X$ (this time, take $\gamma = \Gamma_f$).
+This induced homomorphism $f_*$ is not compatible with intersection products, however we have the so-called \emph{projection formula}
+$$f_*(\alpha \cdot f^*(\beta)) = f_*(\alpha) \cdot \beta.$$
+In addition, for each cartesian square in $\mathcal{P}(k)$
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYJyJdLFsxLDAsIlknIl0sWzAsMSwiWCJdLFsxLDEsIlkiXSxbMCwxLCJmJyJdLFswLDIsInEiLDJdLFsxLDMsInAiXSxbMiwzLCJmIl1d
+\[\begin{tikzcd}
+	{X'} & {Y'} \\
+	X & Y
+	\arrow["{f'}", from=1-1, to=1-2]
+	\arrow["q"', from=1-1, to=2-1]
+	\arrow["p", from=1-2, to=2-2]
+	\arrow["f", from=2-1, to=2-2]
+\end{tikzcd}\]
+we have the formula $f^*p_* = q_*f'^*$ (see \cite{fu84}).
+
+\subsection{} The elements of
+$$\mathcal{Z}^{\dim X + r}(X \times Y)_F,\quad\text{resp.}\quad \mathcal{Z}_{\sim}^{\dim X + r}(X \times Y)_F$$
+are called \emph{algebraic correspondences of degree $r$ with coefficients in $F$} (resp. modulo $\sim$) \emph{from $X$ to $Y$} (or between $X$ and $Y$). When $X$ is not equidimensional, one shall consider $\dim X$ as a locally constant function on $X$.
+
+For example, the transpose of the graph of a morphism $Y \to X$ is a correspondence of degree $0$ from $X$ to $Y$.
+
+The formula
+$$g \circ f = \pr^{XYZ}_{XZ*} \left(\pr^{XYZ*}_{XY}(f) \cdot \pr^{XYZ*}_{YZ}(g)\right)$$
+defines an associative composition law\footnote{that this formula defines $g \circ f$ and not $f \circ g$ is compatible with the above definition of the degree of a correspondence, and is consistent with the traditionally contravariant point of view on motives.} for correspondences modulo $\sim$ (see \cite{fu84})
+$$\mathcal{Z}^{\dim Y + r}_{\sim}(X \times Y)_F \otimes_F \mathcal{Z}^{\dim Z + s}_{\sim}(Y \times Z)_F \to \mathcal{Z}^{\dim Z + r + s}_{\sim}(X \times Z)_F,$$
+adding the degrees and endowing $\mathcal{Z}^{\dim X}_{\sim}(X \times X)_F$ with the structure of a (non necessarily commutative) $F$-algebra, the algebra of correspondences of degree $0$.
+The unit is the class of the diagonal $\Delta_X \subset X \times X$.
+This algebra is also endowed with an (anti-)involution given by transposition $^{\top}$.
+
+\subsection{} For $f \in \mathcal{Z}_{\sim}(X \times Y)_F$, $\alpha \in \mathcal{Z}_{\sim}(X)$ and $\beta \in \mathcal{Z}_{\sim}(Y)$, we define generally
+\begin{align*}
+    f_*(\alpha) &= \pr^{XY}_{Y*}(f \cdot \pr^{XY*}_X (\alpha)) \in \mathcal{Z}_{\sim}(Y),\\
+    \text{and } f^*(\beta) &= \pr^{XY}_{X*}(f \cdot \pr^{XY*}_Y(\beta)) \in \mathcal{Z}_{\sim}(X).
+\end{align*}
+For $\gamma \in \mathcal{Z}^{\dim X + r}_{\sim}(X \times Y)_F$, $a \in \mathcal{Z}^{\dim X' + p}_{\sim}(X \times X')_F$ and $b \in \mathcal{Z}^{\dim Y + q}_{\sim}(Y \times Y')_F$, we have the useful formula :
+$$(a, b)^*(\gamma) = b \circ \gamma \circ a^{\top} \in \mathcal{Z}^{\dim X' + p + q + r}_{\sim}(X' \times Y')_F.$$
+
+\subsubsection{Exercise.} Let $k'/k$ be a field extension.
+Start with an adequate equivalence relation $\sim$ on algebraic cycles on objects of $\mathcal{P}(k')$.
+By \enquote{restriction}, it induces an adequate equivalence relation (still denoted $\sim$) on algebraic cycles $\alpha$ on objects of $\mathcal{P}(k)$ : $\alpha \sim 0$ if and only if $\alpha_{k'} \sim 0$.
+Whence there is a canonical injective homomorphism
+$$\mathcal{Z}^*_{\sim}(X)_F \hookrightarrow \mathcal{Z}^*_{\sim}(X_{k'})_F.$$
+When $k' = \overline{k}$, the absolute Galois group $\Gal(\overline{k}/k)$ acts naturally on $\mathcal{Z}^*_{\sim}(X_{\overline{k}})_F$, and the previous homomorphism induces
+$$\mathcal{Z}^*_{\sim}(X)_F \hookrightarrow \mathcal{Z}^*_{\sim}(X_{\overline{k}})_F^{\Gal(\overline{k}/k)}.$$
+Show that this homomorphism is bijective if $F$ is a $\Q$-algebra, but not surjective in general if $F = \Z$.
+
+\section{Review of the usual adequate relations}
+
+\subsection{} They are the :
+\begin{itemize}
+    \item rational equivalence $\sim_{\rat}$,
+    \item algebraic equivalence $\sim_{\alg}$,
+    \item homological equivalences $\sim_{\hom}$,
+    \item numerical equivalence $\sim_{\num}$,
+\end{itemize}
+to which we add the interesting equivalence $\sim_{\otimes\nil}$ of \enquote{smash-nilpotence} (or $\otimes$-nilpotence) appearing in a work of V. Voevodsky \cite{voevodsky95}\footnote{when these symbols appear as subscripts or superscripts, we will shorten $\sim_{\rat}$ as $\rat$, and so on.}.
+
+To compare them, say that $\sim$ is finer than $\approx$, and write $\sim \succ \approx$, if $\alpha \sim 0$ implies $\alpha \approx 0$. We then have
+$$\sim_{\rat}\ \succ\ \sim_{\alg}\ \succ\ \sim_{\hom}\ \succ\ \sim_{\num},\text{ and}$$
+$$\sim_{\rat}\ \succ\ \sim_{\alg}\ \succ\ \sim_{\otimes\nil}\ \succ\ \sim_{\hom}\ \succ\ \sim_{\num}\text{ if } F \supset \Q.$$
+As a foreshadowing, let us mention that we conjecture that the last three equivalences of this sequence coincide exactly (Grothendieck, Voevodsky).
+
+\subsection{} A cycle $\alpha \in \mathcal{Z}^*(X)_F$ is \emph{rationally equivalent to $0$} (that is, $\alpha \sim_{\rat} 0$) if there exists $\beta \in \mathcal{Z}^*(X \times \P^1)_F$ such that $\beta(0)$ and $\beta(\infty)$ are well-defined\footnote{more precisely, such that each component $Z$ of $\beta$ is dominant over $\P^1$, $\beta(0)$ (resp. $\beta(\infty)$) being then the sum of the cycles associated to the closed subschemes $Z(0)$ (resp. $Z(\infty)$) of $X$, see \cite{fu84}.} and such that $\alpha = \beta(0) - \beta(\infty)$.
+
+The fact that $\sim_{\rat}$ is adequate is among the foundations of intersection theory : the difficult condition is the second one, which is W. Chow's \enquote{moving lemma}, see \cite{fu84}.
+
+The graded rings $\mathcal{Z}^*(X)/\sim_{\rat}$ are called the \emph{Chow rings} and are customarily denoted $\CH^*(X)$.
+We have $\CH^*(X) \otimes F = \mathcal{Z}^*_{\rat}(X)_F$, also denoted $\CH^*(X)_F$.
+
+\subsubsection{Lemma.} $\sim_{\rat}$ is the finest adequate relation.
+
+Indeed, let $\sim$ be an adequate relation on algebraic cycles with coefficients in $F$.
+By the third condition of adequateness, it suffices to show that $[0] \sim [\infty]$ on $\P^1$.
+By the second condition, there exists a cycle $\sum n_i[x_i] \sim [1]$ with $n_i \in F$, such that $\sum n_i[x_i] \cdot [1]$ is well-defined (that is, $x_i \neq 1$).
+Apply the third condition with $\gamma$ the graph of the polynomial $1 - \prod \left(\frac{x - x_i}{1 - x_i}\right)^{m_i}$ (with $m_i > 0$) and $\alpha = \sum n_i[x_i] - [1]$.
+We obtain that $mn[1] \sim m[0]$ where $m = \sum m_i$ and $n = \sum n_i$.
+Since the $m_i$ can still be chosen freely, we conclude that $n[1] \sim [0]$.
+Now, apply the automorphism $x \mapsto 1/x$ (and the third condition again) to obtain $n[1] \sim [\infty]$, whence $[0] \sim [\infty]$ as required.
+
+In virtue of this lemma, we can identify any adequate relation on algebraic cycles with coefficients in $F$ with the data of a homogeneous ideal $I^*_{\sim}(X) = \{\alpha \in \CH(X)_F, \alpha \sim 0\}$ of the Chow ring $\otimes F$ of every $X \in \mathcal{P}(k)$, satisfying a compatibility condition with the bifunctoriality of Chow groups.
+
+\subsubsection{Exercises.}
+\begin{enumerate}[label=\arabic*)]
+    \item Let $x \in \P^1(k)$. Show that the diagonal of $\P^1 \times \P^1$ decomposes modulo $\sim$ as the sum of the idempotent correspondences $[x] \times \P^1$ and $\P^1 \times [x]$, and that this decomposition is independent of $x$.
+    \item More generally, let $t \in \mathcal{Z}^1_{\sim}(\P^n)_F$ be the class of a hyperplane in $\P^n$, and let $[\Delta] \in \mathcal{Z}^n_{\sim}(\P^n \times \P^n)_F$ be the class of the diagonal.
+    Show that $[\Delta] = \sum t^i \times t^{n-i}$.
+
+    Deduce that $\mathcal{Z}^*_{\sim}(X \times \P^n)_F \cong \mathcal{Z}^*_{\sim}(X)_F[t]/(t^{n+1})$ as graded $F$-algebras, $t$ being of degree $1$. Explain how this generalizes Bézout's theorem.
+\end{enumerate}
+
+\subsection{} The definition of $\sim_{\alg}$ is analogous to that of $\sim_{\rat}$.
+The projective line $\P^1$ is replaced by an arbitrary smooth projective curve (or equivalently\footnote{any two points can be joined by a smooth connected projective curve : cut the variety by hypersurfaces general enough and of high enough degree passing through the two points, so that the section is a smooth connected projective curve (they even exist if $k$ is finite, see \cite{poonen}).} any smooth connected projective $k$-scheme, that is how one can prove that the condition $\sim_{\alg} 0$ is stable under addition) and $0$ and $\infty$ are replaced by two $k$-rational points.
+It is easy to see that $\mathcal{Z}^*_{\alg}(X)_F = \mathcal{Z}^*_{\alg}(X) \otimes_{\Z} F$.
+
+\subsection{} According to \cite{voevodsky95}, an element $\alpha \in \mathcal{Z}^*(X)_F$ is \enquote{smash-nilpotent} or $\otimes$-nilpotent if there exists $N > 0$ such that $\alpha \times \alpha \times \dots \times \alpha$ is rationally equivalent to $0$ on $X^N$.
+One checks without difficulty that this is indeed an adequate relation\footnote{this is even obvious when using the adequateness criterion given in the next chapter.}, and that $\mathcal{Z}^*_{\otimes\nil}(X)_F = \mathcal{Z}^*_{\otimes\nil}(X) \otimes_{\Z} F$.
+
+\subsubsection{Proposition (\cite{voevodsky95}).} If $F$ is a $\Q$-algebra, then $\sim_{\alg}$ is finer than $\sim_{\otimes\nil}$.
+\begin{proof}
+Let $\alpha \in \CH^r(X)_F$ be an element sent to $0$ in $\mathcal{Z}^r_{\alg}(X)_F$.
+There exists a genus $g$ smooth connected projective curve $T$, two points $t_0$ and $t_1$ and $\beta \in \CH^r(X \times T)_F$, such that $\alpha = \beta(t_0) - \beta(t_1)$.
+We have $\alpha^{\otimes N} = \beta^{\otimes N}([t_0] - [t_1])^{\otimes N}$, so that it suffices to prove that $([t_0] - [t_1])^{\otimes N} = 0$ in $\CH^N(T^N)_{\Q}$ for $N$ large enough (in fact, $N = 2g$ suffices if $g \geq 1$, which we can assume).
+This relies on the fact that the canonical morphism $S^n(T) \to J(T)$ from the $n$-th symmetric power of $T$ to the Jacobian given by $x_1 + \dots + x_n \mapsto x_1 + \dots + x_n - nt_0$ identifies $S^n(T)$ with a projective bundle on $J(T)$, as soon as $n \geq 2g - 1$ \cite{col75}.
+Knowing the structure of the Chow groups of a projective bundle \cite{fu84}, we deduce that the inclusion $\iota : S^{2g - 1}(T) \hookrightarrow S^{2g}(T)$ given by $x_1 + \dots + x_{2g - 1} \mapsto x_1 + \dots + x_{2g - 1} + t_0$ induces an isomorphism $\iota^* : \CH^{2g}(S^{2g}(T)) \cong \CH^{2g-1}(S^{2g-1}(T))$.
+Furthermore, $\CH^{2g}(S^{2g}(T))_{\Q}$ is identified with the symmetric elements in $\CH^{2g}(T^{2g})_{\Q}$ \cite{fu84}.
+This lets us see $([t_0] - [t_1])^{\otimes 2g}$ as a cycle on $S^{2g}(T)$, and it is easy to see that $\iota^*(([t_0] - [t_1])^{\otimes 2g}) = 0$.
+\end{proof}
+
+\subsubsection{Remarks.}
+\begin{enumerate}[label=\arabic*)]
+    \item The bound $2g$ for the nilpotence exponent is not optimal. One can show that the optimal bound is $g + 1$, see point 2) of \ref{MISSING REF 4.3.3.2}.
+    \item Let $A$ be an elliptic curve, and $x_0$ and $x_1$ two distinct points in $A(k)$.
+    The above proof shows that the cycle $([x_0] - [x_1]) \times ([x_0] - [x_1])$ on $A \times A$ is zero modulo rational equivalence, while $[x_0] - [x_1]$ on $A$ is not itself zero.
+    This disproves the converse of exercise \ref{MISSING REF 3.1.1.2}.
+\end{enumerate}
+
+A remarkable aspect of this result is that even though $\sim_{\rat}$ and $\sim_{\otimes\nil}$ seem very similar by definition, the groups of cycles modulo $\sim_{\rat}$ and modulo $\sim_{\otimes\nil}$ have wildly different properties when $k$ \emph{is algebraically closed}.
+On the one hand, Chow groups are \enquote{continuous} invariants, in general \enquote{enormous} (and varying with $k$) as shown by D. Mumford.
+On the other hand, the groups $\mathcal{Z}^*_{\alg}(X)$ and \emph{a fortiori} $\mathcal{Z}^*_{\sim}(X)$ for every adequate equivalence coarser that $\sim_{\alg}$ (in particular $\sim_{\otimes\nil}$) are \enquote{discrete} invariants, countable and \emph{invariant by extensions of $k$} in virtue of the theory of Chow forms \cite{Kl70a}.
+
+\subsection{} Homological equivalence relies on the notion (and the choice) of a Weil cohomology, which will be explained below. It is the only usual adequate equivalence for which it is unclear \emph{a priori} that $\mathcal{Z}^*_{\sim}(X) \otimes_{\Z} F = \mathcal{Z}^*_{\sim}(X)_F$ for each $F$ contained in the ring of coefficients of the chosen cohomology\footnote{as such, it is also unclear that $\mathcal{Z}^*_{\sim}(X)$ has finite rank, whereas this is obviously the case for $\mathcal{Z}^*_{\sim}(X)_K$ where $K$ is the coefficient ring.}.
+
+\subsection{} We customarily call \emph{$0$-cycle} a cycle of dimension $0$, that is a linear combination $\sum n_i [P_i]$ of closed points. Its degree is defined as
+$$\sum n_i [k(P_i) : k].$$
+It only depends on the class of the $0$-cycle modulo algebraic equivalence\footnote{and of course, it only depends on its class modulo numerical equivalence, by definition.} (this is a rephrasing of Poncelet's \enquote{conservation of number principle} \cite{fu84}).
+
+\subsection{} An element $\alpha \in \mathcal{Z}^r(X)_F$ is \emph{numerically equivalent to $0$} if for each cycle $\beta$ of dimension $r$, the $0$-cycle $\alpha \cdot \beta$ (well-defined in $\CH^d(X)$) is of degree $\langle \alpha, \beta\rangle$ equal to zero.
+
+It is known that $\mathcal{Z}^r_{\num}(X)_{\Q} = \mathcal{Z}^r_{\alg}(X)_{\Q}$ when $r \leq 1$ (Matsusaka \cite{matsusaka57}, reducing the problem to the case of a surface) but the kernel of the quotient map $\mathcal{Z}^r_{\alg}(X)_{\Q} \to \mathcal{Z}^r_{\num}(X)_{\Q}$ is infinite-dimensional in general if $r \geq 2$ \cite{Cl83}.
+
+\subsubsection{Proposition.} If $F$ is an integral domain of characteristic zero, then the $F$-module $\mathcal{Z}^r_{\num}(X)_F$ is free of finite type and $\mathcal{Z}^r_{\num}(X)_F = \mathcal{Z}^r_{\num}(X) \otimes_{\Z} F$.
+What is more, if $F \supset \Q$ and $X$ has pure dimension $d$, then the \enquote{degree of the intersection $0$-cycle} pairing
+$$\mathcal{Z}^r_{\num}(X)_F \times \mathcal{Z}^{d-r}_{\num}(X)_F \to F,\quad (\alpha, \beta) \mapsto \langle \alpha, \beta\rangle$$
+is a perfect pairing.
+
+Since the proof relies on the existence of Weil cohomologies, we postpone it (to \ref{MISSING REF 3.4.5}).
+
+\subsubsection{Exercise.} Suppose that $F$ is a field. Show that $\sim_{\num}$ is the coarsest non-trivial adequate equivalence relation.
 \end{document}
