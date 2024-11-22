@@ -1,0 +1,210 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+In this \enquote{heuristical} chapter, we will outline freely and without trying to be exhaustive, some common threads leading to motives.
+It is not a historical reconstruction of the birth of the theory, and the notions will be reviewed in greater details in the upcoming chapters.
+
+\section{Enumerative geometry}
+
+\subsection{} One of the oldest and most elementary theorems in enumerative projective geometry is that of Bézout\footnote{1779, but stated by MacLaurin in 1720.} on the number of points of intersection between two plane curves without common component.
+If the curves are defined as the vanishing loci of polynomials $P(x, y)$ and $Q(x, y)$ respectively, then they intersect at $\deg P \cdot \deg Q$ points, without forgetting multiplicities and points at infinity.
+Poncelet\footnote{Traité des propriétés projectives des figures (1822).} suggested a \emph{dynamical} approach to this theorem, deforming $Q$ into a product $\prod (a_ix + b_iy)$ of linear components in general position and using his \enquote{conservation of number principle}.
+It is then clear that each of the $\deg Q$ lines $a_ix + b_iy$ intersects $\{P = 0\}$ in exactly $\deg P$ points, and the theorem follows.
+
+A modern formulation of this principle is the fact that the algebraic equivalence of algebraic cycles, and \emph{a fortiori} their rational equivalence, is finer than the numerical equivalence. Let us briefly recall their definitions.
+
+An \emph{algebraic cycle} on a smooth projective variety $X$ is a formal linear combination $Z = \sum n_i Z_i$ of irreducible subvarieties $Z_i$ of $X$, with integers coefficients $n_i$ (or rational, depending on the context). Two cycles $Z$ and $Z'$ are said to be \emph{rationally equivalent} (denoted $Z \sim_{\rat} Z'$) if they may be transformed into one another by a succession of rational deformations, parametrized by the projective line $\P^1$. They are said to be \emph{algebraically equivalent} (denoted $Z \sim_{\alg} Z'$) if they can be transformed into one another by algebraic deformations. They are said to be \emph{numerically equivalent} (denoted $Z \sim_{\num} Z'$) if the intersection numbers $Z \cdot Y = \sum n_i Z_i \cdot Y$ and $Z' \cdot Y = \sum n'_i Z'_i \cdot Y$ agree for every subvariety $Y$ of $X$ of complementary codimension.
+
+Obviously, $\sim_{\rat} \implies \sim_{\alg}$, and the \enquote{conservation of number principle} of Poncelet states that $\sim_{\alg} \implies \sim_{\num}$.
+
+The theory of these equivalences on algebraic cycles had already developed around 1925, especially thanks to efforts by Van der Waerden and the Italian School (independently).
+
+\paragraph*{Basic examples}
+\begin{enumerate}
+    \item A \emph{divisor} is an algebraic cycle $\sum n_i Z_i$ where each $Z_i$ is of codimension one (and each $n_i$ is an integer).
+    One can rationally deform such a divisor to one with nonnegative coefficients, in its own linear system as long as the latter is nonempty.
+
+    \item Let $Z = \sum n_i Z_i$ be a divisor on a curve $X$.
+    Then $Z \sim_{\num} 0 \iff Z \sim_{\alg} 0 \iff \sum n_i = 0$.
+    If $X$ is an elliptic curve, then $Z \sim_{\rat} 0$ if and only if $\sum n_i = 0$ \emph{and} $\sum_X n_i Z_i = 0_X$, where $\sum_X$ is the group law on the elliptic curve $X$.
+    In higher genus, a similar criterion holds, substituting $X$ for its associated abelian \enquote{jacobian} variety.
+\end{enumerate}
+
+\subsection{} Enumerative geometry traditionally deals with counting geometric objects in a given family, having prescribed relations with a given configuration (Chasles, Schubert\footnote{Kalkül der abzählenden Geometrie (1879).}, Zeuthen\footnote{Lehrbuch der abzählenden Methoden der Geometrie (1914).}, ...).
+It proceeds by rephrasing the problem in terms of intersection numbers of subvarieties of grassmannians parametrizing the configurations. These intersection numbers are the central subject of Schubert calculus.
+
+\paragraph*{Basic examples}
+\begin{enumerate}
+    \item Counting the number of lines in $\P^3$ intersecting four given lines in general position. We find two: the lines intersecting a given line in $\P^3$ are parametrized by a divisor $\sigma_1$ in the 4-dimensional grassmannian $\Gr(1, 3)$.
+    According to Schubert calculus, the self-intersection number $\sigma_1^4$ is $2$.
+    In fact, this is another instance of the \enquote{conservation of number principle}\footnote{as J.-B. Bost pointed out.}: with deformations, one reduces the problem to the case where the first two (resp. last two) lines lie in a plane $P$ (resp. $Q$), intersect in a point $A$ (resp. $B$), and are in general position for those constraints.
+    The two lines are then $AB$ and $P \cap Q$.
+    
+    \item Another classical counting problem in algebraic geometry is that of counting solutions to polynomial equations in finite fields (Gauss, Artin, Schmidt, Hasse, Weil, ...). Let $\nu_n$ be the number of points in $\F_{q^n}$ of a given smooth projective variety $X$ defined over $\F_q$. We encode these numbers in the zeta function $Z_X$, defined by the series
+    $$\log Z_X(t) = \sum \nu_n \frac{t^n}{n}.$$
+    One can compute them as intersection numbers on $X \times X$ :
+    $$\nu_n = \langle \Delta, \Gamma_{\Fr_X^n} \rangle$$
+    where $\Delta$ is the diagonal subvariety in $X \times X$, and $\Gamma_{\Fr_X^n}$ is the graph of the $n$-fold iterated Frobenius map of $X$ (locally, $\Fr_X$ is induced by $x \mapsto x^q$).
+    As for many other enumerative problems on curves, one reduces it to studying algebraic correspondences modulo numerical equivalence between curves.
+\end{enumerate}
+
+\subsection{} All of these enumerative problems live naturally in the \enquote{enumerative category of smooth projective varieties} over a field $k$.
+
+This $\Q$-linear category, temporarily denoted $\E(k)$, has as objects the smooth projective varieties on $k$.
+The collection of morphisms is given by the degree $0$ algebraic correspondences modulo numerical equivalence
+\begin{align*}
+    \E(k)(X, Y) = \{\text{algebraic cycles }&\text{with rational coefficients}\\
+    &\text{of codimension }\dim X\text{ on }X \times Y\} / \sim_{\num}.
+\end{align*}
+The composition of morphisms is given by the well-known rule from intersection theory :
+$$g \circ f = (\pr^{XYZ}_{XZ})_* \left((\pr^{XYZ}_{XY})^* f \cdot (\pr^{XYZ}_{YZ})^* g\right)$$
+involving the three \enquote{3-to-2} projections from $X \times Y \times Z$.
+
+One could say that enumerative geometry in the broadest sense is the study of the category $\E(k)$.
+It seems that A. Grothendieck was the first one to consider this category in and of itself, and to point out its remarkable properties.
+
+These properties are even more apparent if one takes the \emph{pseudo-abelian envelope} of $\E(k)$, obtained by formally introducing kernels of idempotent endomorphisms.
+In Grothendieck's lingo, this pseudo-abelian envelope denoted $\NM^{\eff}(k)_{\Q}$ is called the \emph{category of effective numerical motives}.
+Grothendieck had conjectured the following \enquote{miraculous} property :
+$$\NM^{\eff}(k)_{\Q} \text{ is a semi-simple abelian category}$$
+which was later proved by U. Jannsen in 1991 \cite{jannsen92}.
+The category $\NM^{\eff}(k)_{\Q}$ is moreover endowed with a monoidal structure induced by the cartesian product of varieties.
+
+\subsubsection{Recall.} An additive category $\mathcal{C}$ is said to be \emph{pseudo-abelian} if for each endomorphism $e \in \mathcal{C}(A, A)$ satisfying $e^2 = e$, one can write $A$ as a direct sum $A_1 \oplus A_2$ such that $e$ is the projection $A \to A_1$ followed by the inclusion $A_1 \to A$.
+We then say that $A_1$ is the image of $e$ and denote it $e(A)$ or $eA$. We observe that $A_2$ is then the image of the idempotent endomorphism $1 - e$.
+
+Let $\mathcal{C}$ be an additive category.
+Let $\mathcal{C}^{\natural}$ be the category whose objects are the pairs $(A, e)$ with $A$ an object of $\mathcal{C}$ and $e \in \mathcal{C}(A, A)$ an idempotent endomorphism.
+The abelian group of morphisms from $(A, e)$ to $(A', e')$ is defined as $e' \circ \mathcal{C}(A, A') \circ e$, namely the subgroup of $\mathcal{C}(A, A')$ spanned by morphisms of the form $e' \circ f \circ e$.
+One checks without effort that $\mathcal{C}^{\natural}$ is pseudo-abelian.
+It is the \emph{pseudo-abelian envelope} of $\mathcal{C}$.
+The obvious functor $\mathcal{C} \to \mathcal{C}^{\natural}$ is fully faithful.
+
+\section{Cohomology of algebraic varieties}
+
+\subsection{} When the base field is the field of complex numbers $\C$, the use of topological methods - especially cohomology theories - in algebraic geometry dates back to Poincaré, Picard, and then Lefschetz\footnote{the applications to the study of complex algebraic varieties was a major incentive for those authors.}.
+
+Through various ways (simplicial methods, differential forms, ...), we assign to each smooth projective variety $X$ over a field $k$ a graded $k$-algebra $H^*(X)$.
+It satisfies the \enquote{Künneth formula}: $H^*(X \times Y) \cong H^*(X) \otimes H^*(Y)$.
+Moreover, we assign to each algebraic cycle of codimension $r$ over $X$ its fundamental class, which lives in $H^{2r}(X)$.
+The \enquote{cup-product} of $H^*(X)$ is compatible with the intersection product of cycles.
+
+Two cycles $Z$ and $Z'$ are said to be \emph{homologically equivalent} (denoted $Z \sim_{\hom} Z'$) if the fundamental class of their difference is zero.
+This equivalence lies between the algebraic and the numerical ones.
+
+\paragraph*{Basic example} Back to Bézout's theorem. We have $H^2(\P^2, \Q) = H^4(\P^2, \Q) = \Q$ and the cup-product $H^2(\P^2, \Q) \times H^2(\P^2, \Q) \to H^4(\P^2, \Q)$ is multiplication.
+The fundamental class of a curve $C \subset \P^2$ is given by its degree and the fundamental class of a zero-dimensional cycle $\sum n_i P_i$ is its degree $\sum n_i$.
+The number of points at the intersection of two curves $C$ and $C'$ intersecting properly is then given by the class of $C \cdot C'$, namely $\deg C \cdot \deg C'$.
+
+The Lefschetz trace formula provides a powerful cohomological tool to compute the number of (isolated) fixed points of an endomorphism of $X$ :
+$$|\mathrm{Fix}(\alpha)| = \sum_{0}^{2\dim X} (-1)^i \tr(\alpha^* | H^i(X)).$$
+
+\subsection{} It is A. Weil who thought that such methods could yield results about varieties defined over other fields, especially over a finite field $k = \F_q$.
+A formal application of the Lefschetz trace formula to iterated the Frobenius map :
+$$\nu_n = \sum_0^{2\dim X} (-1)^i \tr((\Fr_X^n)^* | H^i(X))$$
+would lead to an expression of the zeta function of $X$ as a rational function :
+$$Z_X(t) = \frac{\det(1 - t \Fr_X^* | H^-(X))}{\det(1 - t \Fr_X^* | H^+(X))}.$$
+Proving such a formula was one of the main goals of the construction of étale cohomology.
+This goal was attained in 1963 by Grothendieck and M. Artin.
+
+In fact, there is an étale cohomology with coefficients in each field $\Q_{\ell}$ of $\ell$-adic numbers for $\ell \neq p$ where $p$ is the characteristic of $k$.
+This plethora makes the situation more obscure: in addition to the awkwardly arbitrary choice of $\ell$, we don't really know how to relate these $\ell$-adic cohomologies.
+
+Ideally, we would want a \emph{universal cohomology theory} with rational coefficients satisfying the Künneth formula.
+However, such a theory with values in $\Q$-vector spaces cannot exist if $p > 0$, because of functoriality considerations about supersingular elliptic curves\footnote{this is well-known work by J.-P. Serre, see below \ref{MISSING REF 6.2}.}.
+There is still hope to find such a \enquote{generalized} cohomology theory with values in a suitable semi-simple $\Q$-linear monoidal category in lieu of $\Q$-vector spaces.
+
+\subsection{} Grothendieck suggested to take $\NM^{\eff}(k)_{\Q}$ as such a category\footnote{\enquote{We had the clear impression that in a sense, which remained very vague at first, all these theories should \enquote{be the same}, that they \enquote{gave the same results}. It is to express this intuitive idea of \enquote{kinship} between different cohomology theories that I introduced the notion of \enquote{motive} associated to an algebraic variety. By this term I intend to suggest that it is the \enquote{common motive} (or the common reason) underlying this multitude of cohomological invariants associated to the variety [...] Thus, the motive associated to an algebraic variety would constitute the \enquote{ultimate} cohomological invariant, from which all the others (associated to the different possible cohomology theories) would be deduced, as different \enquote{musical incarnations}, or different \enquote{realizations}...} \cite[A. Grothendieck, Récoltes et semailles, § 16]{recoltes}}.
+There is an obvious contravariant monoidal functor
+$$\h : \{\text{smooth projective }k\text{-varieties}\} \to \NM^{\eff}(k)_{\Q}$$
+mapping a variety to itself ($\h(X)$ is called the motive of $X$), and mapping a morphism to the transpose of its graph modulo numerical equivalence.
+We expect that $\h$ provides a universal cohomology theory for smooth projective varieties, and in particular that each $\ell$-adic étale cohomology as well as each reasonable \enquote{Weil} cohomology like crystalline cohomology would factor through $\h$ :
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzIsMCwiXFxoKFgpIl0sWzIsMiwiSChYKSA9IEhfe1xcZXR9KFggXFxvdGltZXMgXFxvdmVybGluZXtrfSwgXFxRX3tcXGVsbH0pIl0sWzMsMSwiKFxcZWxsXFx0ZXh0ey1hZGljIHJlYWxpemF0aW9uKX0iXSxbMCwxXSxbMCwyXSxbMSwyLCIiLDAseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\[\begin{tikzcd}
+	X && {\h(X)} \\
+	&&& {(\ell\text{-adic realization)}} \\
+	&& {H(X) = H_{\et}(X \otimes \overline{k}, \Q_{\ell})}
+	\arrow[from=1-1, to=1-3]
+	\arrow[from=1-1, to=3-3]
+	\arrow[dashed, from=1-3, to=3-3]
+\end{tikzcd}\]
+This expected factorization property means exactly that for each reasonable\footnote{\enquote{reasonable} might even be over-cautiousness.} \enquote{Weil cohomology}, \emph{the homological and the numerical equivalences agree} :
+$$\sim_{\hom} \iff \sim_{\num}\ ?$$
+It is a deep conjecture in algebraic cycles theory (one of Grothendieck's standard conjectures, see \ref{MISSING REF 2.4} below).
+
+Accepting this conjecture, one can show that the category $\NM^{\eff}(k)_{\Q}$ is graded in a natural way, and one can give a geometric meaning to the decomposition $H(X) = \bigoplus H^i(X)$ and also to the factorization of the zeta function when $k = \F_q$ :
+$$Z_X(t) = \frac{\prod_{i\text{ odd}} \det(1 - t\Fr_X^* | H^i(X))}{\prod_{i\text{ even}} \det(1 - t\Fr_X^* | H^i(X))}.$$
+Namely, it is a reflection of a decomposition $\h(X) = \bigoplus \h^i(X)$ in $\NM^{\eff}(k)_{\Q}$.
+
+\paragraph*{Basic examples}
+\begin{enumerate}
+    \item The elementary formula
+    $$|\P^n(\F_q)| = 1 + q + \dots + q^n$$
+    expresses the fact that the motive of $\P^n$ decomposes as
+    $$\h(\P^n) = \1 \oplus \1(-1) \oplus \dots \oplus \1(-n),$$
+    where $\1 = \h(\Spec k)$ and $\1(-r) = (\h^2(\P^1))^{\otimes r}$.
+
+    \item The motive of a smooth projective curve $X$ decomposes as
+    $$\h(X) = \1 \oplus \h^1(X) \oplus \1(-1).$$
+    The $\h^1(X)$ component is a substitute for the jacobian $J(X)$ of $X$ up to isogeny, in the sense where for any two curves $X$ and $X'$,
+    $$\NM^{\eff}(k)_{\Q}(\h^1(X), \h^1(X')) \cong \Hom(J(X), J'(X)) \otimes \Q.$$
+    Understanding and generalizing Weil's idea of using the jacobian as a geometric substitute for the cohomology $H^1(X, \Q)$ has been incidentally one of the first clues leading Grothendieck to the notion of motive.
+\end{enumerate}
+
+The rôle of motives in the \emph{factorization of zeta functions} of varieties over finite fields or number fields is a captivating aspect of the theory, reminiscent of Artin's formalism on factorizations of Dedekind's zeta functions in $L$-functions.
+In fact, the \enquote{arithmetical} part of the theory of motives provides a vast generalization (partly conjectural) in higher dimension of Artin's theory.
+
+\section{Galois theory}
+
+\subsection{} Let $k$ be a field, $\overline{k}$ a separable closure, and $\Gal(\overline{k}/k)$ the absolute Galois group of $k$.
+Let $k'$ be a finite-dimensional commutative $k$-algebra.
+Recall that the finite $k$-scheme $Z = \Spec k'$ is said to be \emph{étale} if the following equivalent properties are satisfied :
+\begin{enumerate}[label=(\roman*)]
+    \item $k' \otimes \overline{k} \cong \overline{k}^{[k' : k]}$,
+    \item $k' \cong \prod k_{\alpha}$ where $k_{\alpha}/k$ are finite separable extensions,
+    \item $|Z(\overline{k})| = [k' : k]$.
+\end{enumerate}
+If moreover $k$ is perfect, these properties are also equivalent to
+\begin{enumerate}[resume, label=(\roman*)]
+    \item $k'$ is reduced.
+\end{enumerate}
+
+The functor
+$$\{\text{finite étale }k\text{-schemes}\} \to \{\text{finite continuous }\Gal(\overline{k}/k)\text{-sets}\}$$
+given by $Z \mapsto Z(\overline{k})$ is an equivalence of categories known as the \enquote{Galois-Grothendieck correspondence}.
+
+\subsection{} It happens more often that we have to deal with linear representations of $\Gal(\overline{k}/k)$ than with finite $\Gal(\overline{k}/k)$-sets.
+As an example, the finite extensions of $k$ already provide representations of $\Gal(\overline{k}/k)$, but there are also Frobenius characters, Artin $L$-series, ...
+
+This suggests to \enquote{linearize} the Galois-Grothendieck correspondence, that is to replace it with an equivalence of the form
+$$
+    \{\ ?\ \}
+    \xrightarrow{\sim}
+    \left\{\begin{aligned}\text{finite-dimensional }\Q\text{-vector spaces with}\\
+    \text{a continuous linear action of }\Gal(\overline{k}/k)\end{aligned}\right\}
+$$
+the mysterious category $\{\ ?\ \}$ being semi-simple monoidal $\Q$-linear and linked to finite étale $k$-schemes.
+As the latter are simply the $0$-dimensional smooth projective varieties, one idea would be to take the subcategory of $\NM^{\eff}(k)_{\Q}$ spanned by the $0$-dimensional varieties. These objects are called \emph{Artin motives}.
+
+It is not difficult to check that the category $\AM(k)_{\Q}$ of Artin motives provides an answer to this linearization problem. More precisely, there is a commutative diagram
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHtcXHRleHR7ZmluaXRlIMOpdGFsZSB9a1xcdGV4dHstc2NoZW1lc31cXH0iXSxbMiwwLCJcXHtcXHRleHR7ZmluaXRlIGNvbnRpbnVvdXMgfVxcR2FsKFxcb3ZlcmxpbmV7a30vaylcXHRleHR7LXNldHN9XFx9Il0sWzAsMiwiXFxBTShrKV97XFxRfSJdLFsyLDIsIlxce1xcdGV4dHtmaW5pdGUtZGltZW5zaW9uYWwgfVxcUVxcdGV4dHstdmVjdG9yIHNwYWNlc31cXFxcXFx0ZXh0e3dpdGggYSBjb250aW51b3VzIGxpbmVhciBhY3Rpb24gb2YgfVxcR2FsKFxcb3ZlcmxpbmV7a30vaylcXH0iXSxbMCwxLCJcXHNpbSJdLFsyLDMsIlxcc2ltIl0sWzAsMiwiXFxoIiwyXSxbMSwzLCJcXG1hdGhmcmFre2x9Il1d
+\[\begin{tikzcd}
+	{\{\text{finite étale }k\text{-schemes}\}} && {\{\text{finite continuous }\Gal(\overline{k}/k)\text{-sets}\}} \\
+	\\
+	{\AM(k)_{\Q}} && \left\{\begin{aligned}\text{finite-dimensional }\Q\text{-vector spaces with}\\
+        \text{a continuous linear action of }\Gal(\overline{k}/k)\end{aligned}\right\}
+	\arrow["\sim", from=1-1, to=1-3]
+	\arrow["\h"', from=1-1, to=3-1]
+	\arrow["{\mathfrak{l}}", from=1-3, to=3-3]
+	\arrow["\sim", from=3-1, to=3-3]
+\end{tikzcd}\]
+where $\mathfrak{l}$ is the contravariant linearization functor given by $S \mapsto \Q^S$, an element $g \in \Gal(\overline{k}/k)$ acting on $f \in \Q^S$ by $(g(f))(s) = f(g^{-1}(s))$.
+
+Moreover, the tensor product in $\AM(k)_{\Q}$ corresponding to the cartesian product of $k$-varieties of dimension $0$ is compatible with the tensor product of representations of $\Gal(\overline{k}/k)$.
+
+\subsection{} Changing the point of view, all of this suggests to replace $\AM(k)_{\Q}$ by the more general $\NM^{\eff}(k)_{\Q}$ and to gain a \emph{higher dimensional Galois theory}, namely a Galois theory for systems of multivariate polynomials.
+It is the root of Grothendieck's idea of \emph{motivic Galois groups}, which will be outlined in chapter \ref{MISSING REF 6}. In this theory, the (pro)finite groups are replaced by (pro)algebraic groups.
+
+Just as usual Galois theory translates problems about étale algebras into questions about finite or profinite groups, motivic Galois theory aims to reduce a whole class of geometric problems down to questions in the classical theory of representations of reductive groups and their Lie algebras.
+This philosophy has inspired, either directly or indirectly, numerous research projects in the last thirty years.
+\end{document}

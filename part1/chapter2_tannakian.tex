@@ -1,0 +1,156 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+In this preliminary chapter, we present an overview of the theory of rigid $\otimes$-categories and of Tannakian categories, underlying the Galois theory of motives.
+
+Tannakian theory is a powerful and versatile tool which plays for motives the rôle that usual Galois theory plays in arithmetic, or that fundamental groups play in topology.
+The theory is itself inspired by these two situations.
+
+\section{Introduction}
+
+Start from ordinary Galois theory: above (\ref{MISSING REF 1.3}) we have considered the equivalent categories
+$$\{\text{finite étale }k\text{-schemes}\} \cong \{\text{finite continuous }\Gal(\overline{k}/k)\text{-sets}\}.$$
+How to reconstruct the group $\Gal(\overline{k}/k)$ from these categories ?
+The answer is well-known and leads to Grothendieck's point of view on fundamental groups in algebraic geometry: $\Gal(\overline{k}/k)$ is the automorphism group of the forgetful functor
+$$\{\text{finite continuous }\Gal(\overline{k}/k)\text{-sets}\} \to \{\text{finite sets}\}.$$
+
+After $\Q$-linearization, we obtained the following equivalent categories
+$$
+    \AM(k)_{\Q}
+    \xrightarrow{\sim}
+    \left\{\begin{aligned}\text{finite-dimensional }\Q\text{-vector spaces with}\\
+    \text{a continuous linear action of }\Gal(\overline{k}/k)\end{aligned}\right\}
+$$
+where the category on the left is that of Artin motives over $k$, and the same problem of reconstructing $\Gal(\overline{k}/k)$ from these categories arises.
+In this context, classical Tannaka-Krein duality for locally compact groups suggests to take into account the tensor product, namely the monoidal structure on these categories.
+Indeed, we recover the group $\Gal(\overline{k}/k)$ as the automorphism group of the forgetful $\otimes$-functor
+$$
+    \left\{\begin{aligned}\text{finite-dimensional }\Q\text{-vector spaces with}\\
+    \text{a continuous linear action of }\Gal(\overline{k}/k)\end{aligned}\right\}
+    \to
+    \{\text{finite-dimensional }\Q\text{-vector spaces}\}.
+$$
+
+Suppose for now that $k \subset \C$.
+In this case, the space $\Q^{Z(\overline{k})}$ attached to each finite étale $k$-scheme (or more generally, to each Artin motive) is identified to its Betti cohomology $H_B(Z) = H^0(Z(\C), \Q)$ in such a way that $\Gal(\overline{k}/k) \cong \Aut^{\otimes} H_{B|\AM(k)_{\Q}}$.
+This suggests a definition of the absolute pure motivic Galois group $G_{\mot, k}$ in higher dimension by replacing $\AM(k)_{\Q}$ with the $\otimes$-category $\NM^{\eff}(k)_{\Q}$ of effective numerical motives (see \ref{MISSING REF 1.1.3}).
+Setting up a correct definition of $G_{\mot, k}$ is the origin of Tannakian category theory, initiated by Grothendieck (and developed by N. Saavedra \cite{saavedra72} and P. Deligne \cite{deligne90}).
+
+\section{Rigid $\otimes$-categories}
+
+\subsection{} In this theory the primordial object of study is the category $Rep_F G$ of finite-dimensional representations over a field $F$ of an affine $F$-group scheme $G$.
+The algebra of functions on $G$ inherits a coalgebra structure, making it a commutative Hopf algebra $A_G$, so that $G = \Spec A_G$.
+
+The starting point is that the $F$-linear abelian category $Rep_F G$ is equivalent to the category of comodules of finite $F$-dimension over the \emph{coalgebra} $A_G$. The \emph{algebra} structure on $A_G$ is hidden in the monoidal structure $\otimes : Rep_F G \times Rep_F G \to Rep_F G$.
+
+\subsection{} We call \emph{$\otimes$-category}\footnote{unitary symmetric monoidal $F$-linear category in \cite{saavedra72}.} over a commutative ring $F$ any $F$-linear category $\mathcal{T}$ endowed with a $\otimes$-structure, that is :
+\begin{enumerate}[label=\roman*)]
+    \item a bilinear bifunctor $\otimes : \mathcal{T} \times \mathcal{T} \to \mathcal{T}$,
+    \item a unit object $\1$,
+    \item natural isomorphisms
+    \begin{align*}
+        a_{LMN} &: L \otimes (M \otimes N) \xrightarrow{\sim} (L \otimes M) \otimes N\\
+        c_{MN} &: M \otimes N \xrightarrow{\sim} N \otimes M\quad\text{such that }c_{NM} = c_{MN}^{-1}\\
+        u_M &: M \otimes \1 \xrightarrow{\sim} M,\quad u'_M : \1 \otimes M \xrightarrow{\sim} M
+    \end{align*}
+    with coherence axioms described by several evident commutative diagrams\footnote{a triangle with vertices $(M \otimes \1) \otimes N$, $M \otimes (1 \otimes N)$, $M \otimes N$, a pentagon whose vertices are different ways of parenthesizing $K \otimes L \otimes M \otimes N$, and a hexagon connecting the cyclic permutations of $L \otimes M \otimes N$, see \cite{saavedra72}}.
+\end{enumerate}
+
+A \emph{rigid}\footnote{also known as \emph{autonomous}.} $\otimes$-category over $F$ is a $\otimes$-category $\mathcal{T}$ over $F$ endowed with
+\begin{enumerate}[resume, label=\roman*)]
+    \item an autoduality $^{\vee} : \mathcal{T} \to \mathcal{T}^{\op}$ such that for each object $M$, the functor $? \otimes M^{\vee}$ is left adjoint to $? \otimes M$, and $M^{\vee} \otimes ?$ is right adjoint to $M \otimes ?$.
+\end{enumerate}
+
+Notice that this fourth datum provides natural transformations $\varepsilon : M \otimes M^{\vee} \to \1$ and $\eta : \1 \to M^{\vee} \otimes M$ called respectively evaluation and coevaluation.
+They satisfy the relations $\varepsilon \otimes \id_M \circ \id_M \otimes \eta = \id_M$ and $\id_{M^{\vee}} \otimes \varepsilon \circ \eta \otimes \id_{M^{\vee}} = \id_{M^{\vee}}$.
+For a morphism $f$, we also write $^tf$ instead of $f^{\vee}$.
+
+In a rigid $\otimes$-category, each endomorphism $f$ has a \emph{trace} defined as the following element of the commutative $F$-algebra $\End(\1)$, obtained as the composition
+$$\1 \xrightarrow{f} M^{\vee} \otimes M \xrightarrow{c_{M^{\vee}M}} M \otimes M^{\vee} \xrightarrow{\varepsilon} \1.$$
+The \emph{rank} or \emph{dimension} of the object $M$ is the trace of the identity $\id_M$, that is the element $\varepsilon \circ c_{M^{\vee}M} \circ \eta \in \End(\1)$.
+
+\subsubsection{Examples.}
+\begin{enumerate}[label=\arabic*)]
+    \item For a field $F$ and $\mathcal{T} = Rep_F G$, the unit $\1$ is the trivial representation $F$ and the notion of rank agrees with the usual one.
+    \item Let $VecGr_K$ (resp. $sVec_K$) the category of finite-dimensional $\Z$-graded (resp. $\Z/2$-graded) vector spaces over a field $K$.
+    The tensor product $\otimes_K$ makes it a rigid $\otimes$-category, the commutativity constraint $c_{MN}$ swapping factors with the Koszul sign rule\footnote{in other words, there is a minus sign when swapping two odd factors.}. The unit is $K$ concentrated in degree $0$. The rank of an object $V^*$ is its super-dimension $\dim V^+ - \dim V^-$, where $V^+ = \bigoplus V^{2i}$ and $V^- = \bigoplus V^{2i+1}$.
+    \item Combining the previous two examples, we obtain the rigid $\otimes$-category of super-representations of $G$. In practice, we rather consider the sub-rigid $\otimes$-category $Rep_F(G, \varepsilon)$ defined in the following way. Since $\varepsilon$ is in the center of $G(F)$ and of order $1$ or $2$, $Rep_F(G, \varepsilon)$ is spanned by the super-representations whose even part is exactly where $\varepsilon$ acts trivially.
+    \item Vector bundles over a given $F$-scheme $X$ form a rigid $\otimes$-category with $\End(\1) = F$ when $X$ is proper and geometrically connected. The rank agrees with the usual notion.
+\end{enumerate}
+
+\subsubsection{Remark.} In a pseudo-abelian rigid $\otimes$-category over a field $F$ of characteristic zero, we can define symmetric and exterior powers of each object $M$ :
+$$S^n M = s_n(M),\quad \bigwedge^n M = \lambda_n(M),$$
+where $s_n = \frac{1}{n!} \sum_{\sigma \in \Sigma_n} \sigma$ (resp. $\lambda_n = \frac{1}{n!} \sum_{\sigma \in \Sigma_n} \sgn(\sigma)\sigma$) denotes the symmetrization (resp. antisymmetrization) projection.
+
+\subsection{} A \emph{$\otimes$-functor} between $\otimes$-categories is the data of an $F$-linear functor
+$$\omega : \mathcal{T} \to \mathcal{T}'$$
+and of a collection of natural isomorphisms
+\begin{align*}
+    o_{MN} : \omega(M \otimes N) &\xrightarrow{\sim} \omega(M) \otimes \omega(N)\\
+    o_{\1} : \omega(\1) &\xrightarrow{\sim} \1'
+\end{align*}
+compatible with the constraints $a$, $c$, $u$ and $u'$.
+
+If the $\otimes$-categories are rigid, then such a functor is automatically compatible with the duality $^{\vee}$ (up to natural isomorphism). Moreover, thanks to this duality, every natural transformation between $\otimes$-functors is then a natural isomorphism (see \cite{deligne90}).
+
+\subsubsection{Exercise.} Construct the free rigid $\otimes$-category generated by one object $M$.
+
+\section{Tannakian categories}
+
+\subsection{} Let $F$ be a field and $\mathcal{T}$ be an abelian rigid $\otimes$-category over $F$ such that $\End(\1) = F$.
+A \emph{fiber functor} on $\mathcal{T}$ is a faithful exact $\otimes$-functor
+$$\omega : \mathcal{T} \to Vec_K$$
+whose target is the rigid $\otimes$-category of finite-dimensional vector spaces over a certain field extension $K$ of $F$.
+If such a functor exists, then we say that $\mathcal{T}$ is \emph{Tannakian}\footnote{in reference to classical Tannaka-Krein theory for compact groups. It deserves as well, if not more, to be called a Kreinian category, but usage decided otherwise, see \cite{bre94}. The Tannakian part of the theory provides a left inverse to $G \mapsto Rep_F G$ and the Kreinian part tells us that it is also a right inverse.}.
+
+We can then define the affine $K$-group scheme $G = \uAut^{\otimes} \omega$ called the \emph{Tannakian group} of $\mathcal{T}$ associated with $\omega$.
+For each extension $K'/K$, $(\uAut^{\otimes} \omega)(K')$ is the automorphism group of the extended $\otimes$-functor $\omega_{K'} : \mathcal{T} \to Vec_{K'}$.
+
+\subsubsection{Theorem (Deligne \cite{deligne90}, 7).} Let $\mathcal{T}$ be a rigid $\otimes$-category over a field $F$ of characteristic zero, which is abelian and such that $\End(\1) = F$.
+Then $\mathcal{T}$ is Tannakian if and only if the rank of every object is a natural number, if and only if for each object $M$, we have $\bigwedge^n M = 0$ for $n$ large enough.
+
+\subsection{} If there exists a fiber functor $\omega$ with $K = F$, we say that $\mathcal{T}$ is \emph{neutral Tannakian}.
+
+In this case, $\omega$ becomes an \emph{equivalence} of rigid $\otimes$-categories
+$$\omega : \mathcal{T} \to Rep_F G$$
+where $Rep_F G$ denotes the rigid $\otimes$-category of finite-dimensional $F$-representations of $G = \uAut^{\otimes} \omega$.
+Moreover, the category of fiber functors $\omega$ over $F$ is equivalent to the groupoid of $G$-torsors.
+
+This establishes a correspondence between $\otimes$-categorical properties and properties of the associated groups.
+Here are some examples :
+\begin{itemize}
+    \item $G$ is an algebraic group (that is, $G$ is of finite type over $F$) if and only if $\mathcal{T}$ admits a $\otimes$-generator.
+    This means that there is an object $M$ such that every object of $\mathcal{T}$ is a subquotient of a finite sum $\bigoplus (M^{\otimes m_i} \otimes M^{\vee, \otimes n_i})$.
+    In this case, we write $\mathcal{T} = \langle M \rangle^{\otimes}$ and $G$ is identified with a Zariski closed algebraic subgroup of $GL(\omega(M))$.
+    A subspace of $\bigoplus (\omega(M)^{\otimes m_i} \otimes (\omega(M)^{\vee})^{\otimes n_i})$ is stable under the action of $G$ if and only if it is the image by $\omega$ of a subobject of $\bigoplus (M^{\otimes m_i} \otimes M^{\vee, \otimes n_i})$.
+    \item (if the characteristic of $F$ is zero) $G$ is a pro-reductive\footnote{An affine scheme group $G$ over a field $F$ of characteristic zero is pro-reductive if its unipotent radical is trivial. This is equivalent to $G$ being a inverse limit of reductive algebraic $F$-groups (non necessarily connected).} if and only if $\mathcal{T}$ is semi-simple.
+\end{itemize}
+
+\subsection{} Let $\phi : \mathcal{T}' \to \mathcal{T}$ be an exact $\otimes$-functor between neutral Tannakian categories.
+Let $\omega : \mathcal{T} \to Vec_F$ be a fiber functor.
+Then $\omega' = \omega \circ \phi : \mathcal{T}' \to Vec_F$ is also a fiber functor, and there is a homomorphism
+$$f = \phi^* : G = \uAut^{\otimes} \omega \to G' = \uAut^{\otimes} \omega'$$
+between the associated Tannakian groups.
+
+Conversely, each group homomorphism $f : G \to G'$ yields a $\otimes$-functor $\phi = f^* : Rep_F G' \to Rep_F G$.
+We have that :
+\begin{itemize}
+    \item $f$ is a monomorphism (a closed immersion) if and only if each object $M$ of $\mathcal{T}$ is a subquotient of the image by $\phi$ of an object $N'$ of $\mathcal{T}'$,
+    \item $f$ is an epimorphism (faithfully flat) if and only if $\phi$ is fully faithful and for each object $M'$ of $\mathcal{T}'$, each subobject of $\phi(M')$ is the image by $\phi$ of a subobject of $M'$ (this last condition is automatically satisfied if $\mathcal{T}$ is semi-simple).
+    \item $\phi$ identifies $\mathcal{T}'$ with the category of objects of $\mathcal{T}$ endowed with an action of $G'$ factoring the action of $G$.
+\end{itemize}
+
+\subsection{} The Tannakian group $G$ is not uniquely determined by $\mathcal{T}$ (for example, two $F$-groups which are inner forms of each other have equivalent $\otimes$-categories of representations), the datum $\omega$ is essential.
+
+In a more intrisic and general manner, we can attach to each Tannakian category\footnote{or even more generally, any abelian rigid $\otimes$-category such that $\End(\1) = F$ perfect, whose objects and morphism $F$-spaces are of finite length.} $\mathcal{T}$ over $F$ a commutative Hopf algebra $\mathcal{O}(\pi(\mathcal{T}))$ in the category of ind-objects of $\mathcal{T}$, such that for every fiber functor $\omega : \mathcal{T} \to Vec_K$, $\omega(\mathcal{O}(\pi(\mathcal{T})))$ is the algebra of functions of the $K$-group scheme $\uAut^{\otimes} \omega$.
+
+Denote by $\pi(\mathcal{T})$ the same object in the opposite category (that of pro-objects of $\mathcal{T}^{\op}$) seen as an \enquote{affine $\mathcal{T}$-group scheme}.
+As such, $\omega(\pi(\mathcal{T}))$ is identified with the usual affine $K$-group scheme $\uAut^{\otimes} \omega$.
+If $\mathcal{O}(\pi(\mathcal{T}))$ is cocommutative, then $\pi(\mathcal{T})$ itself can be seen as an affine $K$-group scheme in the usual sense.
+
+Each exact $\otimes$-functor $\phi : \mathcal{T}' \to \mathcal{T}$ between Tannakian categories over $F$ yields a homomorphism $\pi(\mathcal{T}) \to \phi\pi(\mathcal{T}')$ and identifies $\mathcal{T}'$ with the category of objects of $\mathcal{T}$ endowed with an action of $\phi\pi(\mathcal{T}')$ factoring the action of $\pi(\mathcal{T})$, see \cite{deligne90}.
+
+\subsection{} A \emph{Tannakian subcategory} of a Tannakian category $\mathcal{T}$ is a full subcategory $\mathcal{T}'$ of $\mathcal{T}$ stable by $\otimes$ and $^{\vee}$ such that each subobject and quotient in $\mathcal{T}$ of an object of $\mathcal{T}'$ lies in $\mathcal{T}'$\footnote{as a counter-example, the fully faithful restriction $\otimes$-functor $Rep_F GL_n \to Rep_F B_n$, where $B_n$ is the subgroup of triangular matrices, does not make $Rep_F GL_n$ a Tannakian subcategory.}.
+The corresponding homomorphim $\mathcal{O}(\pi(\mathcal{T}')) \to \mathcal{O}(\pi(\mathcal{T}))$ is then faithfully flat, and for every fiber functor on $\mathcal{T}$ we get a faithfully flat homomorphism between the Tannakian groups.
+\end{document}

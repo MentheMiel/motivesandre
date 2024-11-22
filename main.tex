@@ -1,0 +1,105 @@
+\documentclass[12pt]{book}
+\usepackage[margin=3cm]{geometry}
+
+\usepackage{subfiles}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{quiver}
+\usepackage{enumitem}
+
+\usepackage{titlesec}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]{\normalfont\bfseries}{\thesubsubsection}{1em}{}
+\setcounter{secnumdepth}{5}
+
+\newcommand{\rat}{\mathrm{rat}}
+\newcommand{\alg}{\mathrm{alg}}
+\newcommand{\num}{\mathrm{num}}
+\renewcommand{\hom}{\mathrm{hom}}
+\newcommand{\eff}{\mathrm{eff}}
+\newcommand{\mot}{\mathrm{mot}}
+
+\newcommand{\Fr}{\mathrm{Fr}}
+\newcommand{\pr}{\mathrm{pr}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\h}{\mathfrak{h}}
+\newcommand{\et}{\mathrm{ét}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\id}{\mathrm{id}}
+
+\newcommand{\1}{\mathbf{1}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\DeclareMathOperator{\Gr}{\mathbb{G}r}
+\DeclareMathOperator{\NM}{NM}
+\DeclareMathOperator{\AM}{AM}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\uAut}{\underline{Aut}}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Gal}{Gal}
+
+\title{AN INTRODUCTION TO MOTIVES\\(PURE MOTIVES, MIXED MOTIVES, PERIODS)}
+\author{Yves André\\Translated to English by E. Hecky}
+
+\begin{document}
+\maketitle
+
+\paragraph*{Abstract}
+
+\emph{Motives} have been introduced 40 years ago by A. Grothendieck as \enquote{a systematic theory of arithmetic properties of algebraic varieties as embodied in their groups of classes of cycles}. 
+This text provides an exposition of the geometric foundations of the theory (pure and mixed), and a panorama of major developments which have occurred in the last 15 years.
+The last part is devoted to a study of \emph{periods} of motives, with emphasis on examples (polyzeta numbers, notably).
+
+\paragraph*{Foreword}
+
+Many disciplines have adopted in their technical vocabulary the term \emph{motive}, with one of its standard meanings: that of \enquote{reason} (which has a subjective connotation) and that of \enquote{constitutive element}.
+
+By introducing this term in Algebraic Geometry 40 years ago, A. Grothendieck was playing with both meanings at once.
+The goal was to find the common \emph{motive} in different cohomological phenomena (for example, the transcendental and arithmetic notions of weight), or even the \emph{motive} explaining certain mysterious relations between the integrals of algebraic functions, and so on.
+The aim was also to decompose algebraic varieties, from a cohomological point of view, in simple \emph{motives} prone to recombination.
+
+The fundamental intuition of Grothendieck was that this chemistry of motives was ruled by the theory of algebraic correspondences.
+Motives should form some sort of purely algebraic universal cohomology, wherefrom all the other cohomology theories could be deduced as different \enquote{realizations}.
+They should also give birth to a generalization of Galois theory to systems of multivariate polynomials.\\
+
+
+
+One can distinguish three eras in the evolution of the theory.
+Up until the end of the 1970s, it was basically reduced to the conjectural grothendieckian corpus of pure motives, as it is exposed at the end of Saavedra's book \cite{saavedra72}.
+This piece of \enquote{sci-fi mathematics} was only referred to as a source of inspiration.
+
+In the 1980s the theory has seen two major developments.
+The first is the finding of non-conjectural results, even if it required to sacrifice the very notion of motive and to replace it with realizations systems.
+The second is the establishment of a wonderful program towards a general theory of mixed motives, and the key idea of motivic cohomology.
+The Deligne, Beilinson and Block-Kato conjectures on the relations between the values of $L$-functions and regulators have played a major role in making the theory popular amongst the arithmeticians.
+These developments are exposed in the collective work \emph{Motives} (Seattle Conference 1991, AMS).
+
+With the focus shifting back to algebraic correspondences, the next years have seen genuine breakthroughs giving non-conjectural foundations to the theory, both in pure motives with the proof of the conjecture on the semi-simplicity of numerical motives, and in mixed motives with a mature theory of motivic cohomology\footnote{enough to initiate work on the Milnor-Bloch-Kato conjectures.}.
+
+Our aim is to make these developments accessible to non-specialists, while giving them in the first two parts a unitary vision of the theory\footnote{restricting ourselves to the geometric and categorical aspects: there will be no treatment of $L$-functions and nothing will be said about \enquote{Langlands philosophy} \cite{langlands79}}.
+
+\part{PURE MOTIVES}
+
+\chapter{ORIGINS : ENUMERATIVE GEOMETRY, COHOMOLOGY, GALOIS THEORY}
+
+\subfile{part1/chapter1_origins.tex}
+
+\chapter{RIGID $\otimes$-CATEGORIES, TANNAKIAN CATEGORIES}
+
+\subfile{part1/chapter2_tannakian.tex}
+
+\chapter{ALGEBRAIC CYCLES AND COHOMOLOGIES\\(CASE OF SMOOTH PROJECTIVE VARIETIES)}
+
+\subfile{part1/chapter3_algebraiccycles.tex}
+
+\end{document}
