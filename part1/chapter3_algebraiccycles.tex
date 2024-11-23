@@ -2,7 +2,7 @@
 
 \begin{document}
 
-In this second preliminary chapter, we present the basic tools of the theory of pure motives : algebraic cycles, adequate equivalences and Weil cohomologies.
+In this second preliminary chapter, we present the basic tools of the theory of pure motives: algebraic cycles, adequate equivalences and Weil cohomologies.
 
 \section{Algebraic cycles and adequate relations}
 
@@ -69,12 +69,12 @@ This algebra is also endowed with an (anti-)involution given by transposition $^
     f_*(\alpha) &= \pr^{XY}_{Y*}(f \cdot \pr^{XY*}_X (\alpha)) \in \mathcal{Z}_{\sim}(Y),\\
     \text{and } f^*(\beta) &= \pr^{XY}_{X*}(f \cdot \pr^{XY*}_Y(\beta)) \in \mathcal{Z}_{\sim}(X).
 \end{align*}
-For $\gamma \in \mathcal{Z}^{\dim X + r}_{\sim}(X \times Y)_F$, $a \in \mathcal{Z}^{\dim X' + p}_{\sim}(X \times X')_F$ and $b \in \mathcal{Z}^{\dim Y + q}_{\sim}(Y \times Y')_F$, we have the useful formula :
+For $\gamma \in \mathcal{Z}^{\dim X + r}_{\sim}(X \times Y)_F$, $a \in \mathcal{Z}^{\dim X' + p}_{\sim}(X \times X')_F$ and $b \in \mathcal{Z}^{\dim Y + q}_{\sim}(Y \times Y')_F$, we have the useful formula:
 $$(a, b)^*(\gamma) = b \circ \gamma \circ a^{\top} \in \mathcal{Z}^{\dim X' + p + q + r}_{\sim}(X' \times Y')_F.$$
 
 \subsubsection{Exercise.} Let $k'/k$ be a field extension.
 Start with an adequate equivalence relation $\sim$ on algebraic cycles on objects of $\mathcal{P}(k')$.
-By \enquote{restriction}, it induces an adequate equivalence relation (still denoted $\sim$) on algebraic cycles $\alpha$ on objects of $\mathcal{P}(k)$ : $\alpha \sim 0$ if and only if $\alpha_{k'} \sim 0$.
+By \enquote{restriction}, it induces an adequate equivalence relation (still denoted $\sim$) on algebraic cycles $\alpha$ on objects of $\mathcal{P}(k)$: $\alpha \sim 0$ if and only if $\alpha_{k'} \sim 0$.
 Whence there is a canonical injective homomorphism
 $$\mathcal{Z}^*_{\sim}(X)_F \hookrightarrow \mathcal{Z}^*_{\sim}(X_{k'})_F.$$
 When $k' = \overline{k}$, the absolute Galois group $\Gal(\overline{k}/k)$ acts naturally on $\mathcal{Z}^*_{\sim}(X_{\overline{k}})_F$, and the previous homomorphism induces
@@ -83,7 +83,7 @@ Show that this homomorphism is bijective if $F$ is a $\Q$-algebra, but not surje
 
 \section{Review of the usual adequate relations}
 
-\subsection{} They are the :
+\subsection{} They are the:
 \begin{itemize}
     \item rational equivalence $\sim_{\rat}$,
     \item algebraic equivalence $\sim_{\alg}$,
@@ -99,7 +99,7 @@ As a foreshadowing, let us mention that we conjecture that the last three equiva
 
 \subsection{} A cycle $\alpha \in \mathcal{Z}^*(X)_F$ is \emph{rationally equivalent to $0$} (that is, $\alpha \sim_{\rat} 0$) if there exists $\beta \in \mathcal{Z}^*(X \times \P^1)_F$ such that $\beta(0)$ and $\beta(\infty)$ are well-defined\footnote{more precisely, such that each component $Z$ of $\beta$ is dominant over $\P^1$, $\beta(0)$ (resp. $\beta(\infty)$) being then the sum of the cycles associated to the closed subschemes $Z(0)$ (resp. $Z(\infty)$) of $X$, see \cite{fu84}.} and such that $\alpha = \beta(0) - \beta(\infty)$.
 
-The fact that $\sim_{\rat}$ is adequate is among the foundations of intersection theory : the difficult condition is the second one, which is W. Chow's \enquote{moving lemma}, see \cite{fu84}.
+The fact that $\sim_{\rat}$ is adequate is among the foundations of intersection theory: the difficult condition is the second one, which is W. Chow's \enquote{moving lemma}, see \cite{fu84}.
 
 The graded rings $\mathcal{Z}^*(X)/\sim_{\rat}$ are called the \emph{Chow rings} and are customarily denoted $\CH^*(X)$.
 We have $\CH^*(X) \otimes F = \mathcal{Z}^*_{\rat}(X)_F$, also denoted $\CH^*(X)_F$.
@@ -126,7 +126,7 @@ In virtue of this lemma, we can identify any adequate relation on algebraic cycl
 \end{enumerate}
 
 \subsection{} The definition of $\sim_{\alg}$ is analogous to that of $\sim_{\rat}$.
-The projective line $\P^1$ is replaced by an arbitrary smooth projective curve (or equivalently\footnote{any two points can be joined by a smooth connected projective curve : cut the variety by hypersurfaces general enough and of high enough degree passing through the two points, so that the section is a smooth connected projective curve (they even exist if $k$ is finite, see \cite{poonen}).} any smooth connected projective $k$-scheme, that is how one can prove that the condition $\sim_{\alg} 0$ is stable under addition) and $0$ and $\infty$ are replaced by two $k$-rational points.
+The projective line $\P^1$ is replaced by an arbitrary smooth projective curve (or equivalently\footnote{any two points can be joined by a smooth connected projective curve: cut the variety by hypersurfaces general enough and of high enough degree passing through the two points, so that the section is a smooth connected projective curve (they even exist if $k$ is finite, see \cite{poonen}).} any smooth connected projective $k$-scheme, that is how one can prove that the condition $\sim_{\alg} 0$ is stable under addition) and $0$ and $\infty$ are replaced by two $k$-rational points.
 It is easy to see that $\mathcal{Z}^*_{\alg}(X)_F = \mathcal{Z}^*_{\alg}(X) \otimes_{\Z} F$.
 
 \subsection{} According to \cite{voevodsky95}, an element $\alpha \in \mathcal{Z}^*(X)_F$ is \enquote{smash-nilpotent} or $\otimes$-nilpotent if there exists $N > 0$ such that $\alpha \times \alpha \times \dots \times \alpha$ is rationally equivalent to $0$ on $X^N$.
@@ -173,4 +173,138 @@ is a perfect pairing.
 Since the proof relies on the existence of Weil cohomologies, we postpone it (to \ref{MISSING REF 3.4.5}).
 
 \subsubsection{Exercise.} Suppose that $F$ is a field. Show that $\sim_{\num}$ is the coarsest non-trivial adequate equivalence relation.
+
+\section{Weil cohomologies}
+
+\subsection{} Taking inspiration from \cite{saavedra72}, we axiomatize the properties of the cohomologies mentioned in \ref{MISSING REF 1.2.2}.
+
+The product $\times_k$ endows the category $\mathcal{P}(k)$ of smooth projective $k$-schemes with the structure of a (non additive) symmetric monoidal category.
+The unit is the point $\Spec k$ and there are canonical isomorphisms
+$$X \times Y \cong Y \times X,\quad (X \times Y) \times Z \cong X \times (Y \times Z).$$
+The diagonal $\Delta_X : X \hookrightarrow X \times X$ endows each object $X \in \mathcal{P}(k)$ with the structure of a counitary cocommutative coalgebra with respect to this monoidal structure.
+
+Recall that $VecGr_K$ denotes the rigid $\otimes$-category of finite-dimensional $\Z$-graded vector spaces over a field $K$ (with commutativity given by the Koszul sign rule).
+Let $VecGr_K^{\geq 0}$ be its full (not rigid) sub-$\otimes$-category spanned by objects concentrated in nonnegative degrees.
+
+\subsubsection{Definition.} A (pure) Weil cohomology\footnote{in the literature it is often asked that $K$ is of characteristic zero, however the general case, even that of a product of fields, is useful.} $H^*$ is a functor
+$$H^* : \mathcal{P}(k)^{\op} \to VecGr_K^{\geq 0}$$
+compatible with the monoidal structure, satisfying
+\begin{itemize}[label=\ast)]
+    \item $\dim_K H^2(\P^1) = 1$,
+\end{itemize}
+and endowed with the additional data 1) and 2) given below\footnote{several authors also require $H^*$ to satisfy the \enquote{weak and hard Lefschetz theorems}. We avoid it, on the one hand because we will have to consider generalizations of the notion of Weil cohomologies to the mixed case (\ref{MISSING REF 14.2.4}) where the \enquote{Lefschetz theorems} lose their relevance, and on the other hand because we will construct in the pure case \emph{a priori} non-classical Weil cohomologies for which the \enquote{Lefschetz theorems} are not yet known to hold (\ref{MISSING REF 9.1.4}).}.
+
+Notice that the comultiplication of each object $X$ of $\mathcal{P}(k)$ induces \emph{ipso facto} a multiplication (the cup-product) on $H^*(X)$, making $H^*(X)$ a (unitary) graded-commutative $\mathbf{N}$-graded $K$-algebra (that is, a unitary commutative algebra object in $VecGr_K^{\geq 0}$).
+
+For each $d \in \Z$, denote $(r)$ the \enquote{Tate twist} operation $V^* \mapsto V^* \otimes H^2(\P^1)^{\otimes (-r)}$ in $VecGr_K$ (considering that the $\ast$) condition implies the $\otimes$-invertibility of $H^2(\P^1)$ in $VecGr_K$).
+
+The additional data in \ref{MISSING REF 3.3.1.1} are:
+\begin{enumerate}[label=\arabic*)]
+    \item (trace, Poincaré duality) for each $X \in \mathcal{P}(k)$ with pure dimension $d$, a $K$-linear map $H^{2d}(X)(d) \xrightarrow{\Tr_X} K$, which is an isomorphism when $X$ is geometrically connected, satisfying $\Tr_{X \times Y} = \Tr_X \Tr_Y$ (after the obvious identifications that are needed) and such that the product of $H^*(X)$ induces for each $i$ a duality pairing
+    $$\langle\ ,\ \rangle : H^i(X) \times H^{2d - i}(X)(d) \to H^{2d}(X)(d) \xrightarrow{\Tr_X} K.$$
+    \item (cycle classes) for each $X \in \mathcal{P}(k)$, abelian group homomorphisms
+    $$\gamma_X^r = \gamma_{X, H}^r : \CH^r(X) \to H^{2r}(X)(r)$$
+    that are
+    \begin{itemize}
+        \item contravariant in $X$,
+        \item compatible with the \enquote{external product} $\gamma_{X \times Y}^{r + s}(\alpha \times \beta) = \gamma_X^r(\alpha) \otimes \gamma_Y^s(\beta)$,
+        \item \enquote{normalized} such that $\gamma^d$ composed with the trace $\Tr_X$ coincides with the $0$-cycles degree map considered in \ref{MISSING REF 3.2.6} when $X$ has pure dimension $d$.
+    \end{itemize}
+\end{enumerate}
+
+Compatibility with the monoidal structure means that for each pair $(X, Y)$ there exists a canonical Künneth isomorphism between graded-commutative graded algebras:
+$$H^*(X \times Y) \cong H^*(X) \otimes H^*(Y)$$
+functorially in $X$ and $Y$ (and compatible with the associativity and commutativity constraints).
+The projections $\pi_X^i = \pi_{X, H}^i : H^*(X) \to H^i(X) \hookrightarrow H^*(X)$ on homogeneous components are called the \emph{Künneth projectors} of $X$.
+
+\subsection{Some formal consequences of the definition}
+See \cite{Kl68}, \cite{Kl94}.
+\begin{itemize}
+    \item For each $r \in \Z$, $K(r)$ is isomorphic (not canonically in general) to $K$ concentrated in degree $-2r$. The double Tate torsion $(r)(s)$ is the same as the simple torsion $(r + s)$.
+    \item $H^*(\Spec k) = H^0(\Spec k) \stackrel{\Tr_{\Spec k}}{=} K$.
+    \item $H^i(X) = 0$ for $i > 2 \dim X$.
+    \item Poincaré duality can also be written in the following form, for each $r \in \Z$
+    $$\langle\ ,\ \rangle : H^i(X)(r) \times H^{2d_X - i}(X)(d - r) \to H^{2d_X}(X)(d) \xrightarrow{\Tr_X} K,$$
+    and we have $\langle x, x'\rangle = (-1)^i \langle x', x\rangle$ for each $x \in H^i(X)(r)$ and $x' \in H^{2d-i}(X)(d-r)$.
+    \item $\langle \gamma_r(\alpha), \gamma_{d - r}(\beta)\rangle = \langle \alpha, \beta\rangle$.
+    \item Let $X, Y \in \mathcal{P}(k)$ with dimensions $d_X$ and $d_Y$ respectively, and $f : X \to Y$ be a morphism.
+    To $f^* = H^*(f)$, Poincaré duality assigns the \enquote{Gysin morphism} $f_* : H^*(X)(d_X) \to H^{* - 2(d_X - d_Y)}(Y)(d_Y)$, adjoint to $f^*$ and satisfying the \emph{projection formula} $f_*(f^*(y) \cdot x) = y \cdot f_*(x)$.
+    One also abusively denotes $f_*$ the homomorphisms obtained by the Gysin morphism after Tate twists.
+    \item The trace map $\Tr_X$ is $p^X_*$, $p^X$ being the structural morphism $X \to \Spec k$.
+    For each morphism $f : X \to Y$ as before, we have $\Tr_X = \Tr_Y \circ f_*$. From $p^{X \times Y} = p^X \times p^Y$ and the Künneth formula, we deduce $\Tr_{X \times Y} = \Tr_X \otimes \Tr_Y$.
+    \item By the Künneth formula and duality, there are non graded canonical isomorphisms
+    $$H(X \times Y)(d_X) \cong H(X)(d_X) \otimes H(Y) \cong \Hom_K(H(X), H(Y))$$
+    given by $x \otimes y \mapsto (z \mapsto \langle z, x\rangle y)$, and more precisely there are canonical isomorphisms $u \mapsto \underline{u} = (z \mapsto \pr^{XY}_{Y*}(\pr^{XY*}_{X}(z) \cdot u))$:
+    \begin{align*}
+        H^{2d_X + i}(X \times Y)(d_X) &\cong \bigoplus_{j \geq 0} H^{2d_X - j}(X)(d_X) \otimes H^{j+i}(Y)\\
+        &\cong \bigoplus_{j \geq 0} \Hom_K(H^j(X), H^{j+i}(Y))
+    \end{align*}
+    Moreover, for each $v \in H^{2d_Y + h}(Y \times Z)(d_Y)$ the element
+    $$w = \pr^{XYZ}_{XZ*}(\pr^{XYZ*}_{XY}(u) \cdot \pr^{XYZ*}_{YZ}(v))$$
+    satisfies $\underline{w} = \underline{v} \circ \underline{u} \in \bigoplus_{j \geq 0} \Hom_K(H^j(X), H^{j+i+h}(Z))$.
+    \item Let $x \in H^i(X)$, $y \in H^j(Y)$ with $i = j$ mod $2$. We have
+    $$\langle y', \underline{x \otimes y}(x')\rangle = \langle x', \underline{y \otimes x}(y')\rangle,$$
+    so that we can identify $(-1)^i \underline{y \otimes x}$ with the Tate-twisted transpose of $\underline{x \otimes y}$.
+    It follows that denoting $c_{XY}$ the switching map $X \times Y \to Y \times X$, we have
+    $$\forall u \in H^{2d_X + 2r}(X \times Y)(d_X),\quad \underline{c_{XY}^*(u)} = \underline{u}^{\top}.$$
+    \item Let $x \in H^{\text{even}}(X \times W)(d_X)$, $y \in H^{\text{even}}(Y \times Z)(d_Y)$, $v \in H(X \times Y)(d_X)$ and $w = \underline{c_{WY}^*(x \otimes y))}(v) \in H(W \times Z)(d_W)$. Then $\underline{w} = \underline{y} \circ \underline{v} \circ \underline{x}^{\top}$.
+    \item $\gamma_X^0([X])$ is the unit of the algebra $H^*(X)$.
+    \item Functoriality and compatibility of cycle classes with the \enquote{external} product imply compatibility with the \enquote{internal} product (intersection product in $\CH(X)$, cup-product in $H^*(X)$):
+    $$\gamma_X^{r+s}(\alpha \cdot \beta) = \gamma_X^{r+s}(\Delta^*(\alpha \times \beta)) = \Delta^*(\gamma_X^r(\alpha) \otimes \gamma_X^s(\beta)) = \gamma_X^r(\alpha) \cdot \gamma_X^s(\beta).$$
+    \item Let $g : Y \to X$ be a morphism in $\mathcal{P}(k)$ and suppose that $X$ has pure dimension $d_X$.
+    Then with
+    $$u = \gamma_{X \times Y}(\Gamma_g^{\top}) \in H^{2d_X}(X \times Y)(d_X),$$
+    we have $\underline{u} = g^* \in \Hom_K(H^*(X), H^*(Y))$.
+    If $Y$ has pure dimension $d_Y$ then with
+    $$u^{\top} = \gamma_{X \times Y}(\Gamma_g) \in H^{2d_Y}(X \times Y)(d_X),$$
+    we also have
+    $$\underline{u^{\top}} = g_* \in \Hom_K(H^*(Y), H^{* - 2(d_X - d_Y)}(X)(d_X - d_Y)).$$
+    \item Let $\beta \in \CH(X \times Y)$.
+    Reusing the notation $\theta \in \CH(X) \mapsto \beta_*(\theta) = \pr^{XY}_{Y*}(\beta \cdot \pr^{XY*}_X(\theta)) \in \CH(Y)$ already introduced in \ref{MISSING REF 3.1.1}, we have $\underline{\gamma_{X \times Y}(\beta)} \circ \gamma_X = \gamma_Y \circ \beta_*$.
+    When $\beta = \Gamma_f$ is the graph of a morphism $f : X \to Y$, we have $\underline{\gamma_{X \times Y}(\Gamma_f)} = f_*$, whence $f_*\gamma_X = \gamma_Y f_*$.
+    \item $H^*(X \amalg Y)$ is canonically isomorphic to $H^*(X) \oplus H^*(Y)$.
+    This lets us circumvent any equidimensionality assumption by letting
+    $$H^{2d_X + i}(X \times Y)(d_X) = \bigoplus_j H^{2d_j + i} (X_j \times Y)(d_j)$$
+    where $X_j$ is the component of $X$ having pure dimension $d_j$.
+\end{itemize}
+
+\subsection{Lefschetz trace formula.} Let $V = V^+ \oplus V^-$ and $W = W^+ \oplus W^-$ be two (finite-dimensional) super-vector spaces and let $\tilde{V}$ and $\tilde{W}$ be their respective $K$-duals.
+Recall that the commutativity constraint $c_{VW}$ is the interchange of factors with the Koszul sign rule
+$$V \otimes W \cong W \otimes V,\quad c_{VW}(v \otimes w) = (-1)^{\delta v \cdot \delta w} w \otimes v,$$
+where $\delta v$ (resp. $\delta w$) denotes the parity of a homogeneous element $v$ (resp. $w$).
+
+We identify $V \otimes \tilde{W}$ with the dual of $\tilde{V} \otimes W$ by the formula $\langle \tilde{v} \otimes w, v \otimes \tilde{w}\rangle = (-1)^{\delta v \cdot \delta w} \langle \tilde{v}, v\rangle\langle w, \tilde{w}\rangle$ (also we can assume that $\delta v = \delta \tilde{v}$ and $\delta w = \delta \tilde{w}$).
+
+Moreover, we identify $\tilde{V} \otimes W$ with $\Hom(V, W)$ by $\tilde{v} \otimes w \mapsto (v' \mapsto \langle \tilde{v}, v'\rangle w)$ and similarly $\tilde{W} \otimes V$ is identified with $\Hom(W, V)$.
+
+As such, the endomorphism $(\tilde{w} \otimes v) \circ (\tilde{v} \otimes w)$ of $V$ is given by $v' \mapsto \langle w, \tilde{w} \rangle \langle v', \tilde{v} \rangle v$, that is, $(\tilde{w} \otimes v) \circ (\tilde{v} \otimes w) = \langle w, \tilde{w} \rangle \tilde{v} \otimes v$.
+The supertrace $s\tr(\tilde{v} \otimes v)$ is $\langle \tilde{v}, v\rangle$.
+
+We deduce that $\langle \tilde{v} \otimes w, c_{\tilde{W}V}(\tilde{w} \otimes v)\rangle = s\tr((\tilde{w} \otimes v) \circ (\tilde{v} \otimes w))$, and by linearity that
+$$\langle \phi, c_{\tilde{W}V}(\psi)\rangle = s\tr(\psi \circ \phi)$$
+for each $\phi \in \Hom(V, W)$ and $\psi \in \Hom(W, V)$ of matching parities.
+
+Apply this super-linear algebra formula to
+$$V^+ = H^+(X),\quad V^- = H^-(X),\quad W^+ = H^+(Y),\quad W^- = H^-(Y),$$
+and
+$$\phi \in H^{2d_Y + i}(X \times Y)(d_Y + n),\quad \psi \in H^{2d_X - i}(Y \times X)(d_X - n),$$
+where $H^+$ and $H^-$ respectively denote the even and odd parts of cohomology.
+We also have $c_{\tilde{W}V}(\psi) = (c_{YX})_*(\psi) = (c_{XY})^*(\psi) = \psi^{\top}$.
+
+We then obtain the \emph{Lefschetz trace formula}:
+$$\boxed{\langle \phi, \psi^{\top} \rangle = \sum_{j = 0}^{2d_X} (-1)^j \tr(\psi \circ \phi | H^j(X)).}$$
+In the case where $X = Y$, $i = n = 0$ and $\psi = \pi_X^j$, we have $(\pi_X^j)^{\top} = \pi_X^{2d_X - j}$, whence
+$$\boxed{\tr(\phi | H^j(X)) = (-1)^j \langle \phi, \pi_X^{2d_X - j} \rangle.}$$
+
+\subsection{Homological equivalence.} Let $H^*$ be a Weil cohomology with coefficients in $K$ and $F$ be a subring of $K$.
+An element $\alpha \in \mathcal{Z}^r(X)_F$ is \emph{homologically equivalent to $0$} if $H^*(\alpha) = \gamma^r(\alpha) = 0$.
+It follows from the above formula $\gamma_X^{r+s}(\alpha \cdot \beta) = \gamma_X^r(\alpha) \cdot \gamma_X^s(\beta)$ that this is an adequate equivalence relation, denoted $\sim_{\hom}$ or $\sim_H$.
+
+Via $\gamma_X^r$, $\mathcal{Z}_{\hom}^r(X)_F$ is identified with an $F$-submodule (necessarily without torsion) of $H^{2r}(X)(r)$.
+It thus has finite rank if $F = K$, but in general it is not known whether the quotient map $\mathcal{Z}_{\hom}^r(X)_F \otimes_{\Z} K \to \mathcal{Z}_{\hom}^r(X)_K$ is injective\footnote{if $K$ has positive characteristic $p$, this is false. There are counter-examples with $X$ a supersingular abelian surface over a field $k$ of characteristic $p$ and $r = 1$.}, and even whether $\mathcal{Z}_{\hom}^r(X)$ has finite rank.
+
+It is immediate that $\sim_{\otimes\nil}$ is finer than $\sim_{\hom}$.
+On the other hand, $\sim_{\hom}$ is finer than $\sim_{\num}$ (by multiplicativity of cycle classes, or using exercise \ref{MISSING REF 3.2.7.2}).
+
+\subsubsection{Exercise.} Show that $\sim_{\hom}$ is coarser than $\sim_{\alg}$ without using \ref{MISSING REF 3.2.4.1}.
 \end{document}
